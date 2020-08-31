@@ -71,6 +71,7 @@ Update an existing product's fields.
 Delete an existing product.
 #### Responses:
 **204**
+
 **404**
 
 # Deployment on Heroku
@@ -82,9 +83,7 @@ command `python manage.py retrieve_new_offers`.
 # Development environment
 `docker-compose.yml` is provided for development and testing purposes. 
 There are 2 Postgres services - a persistent one for development and one without a volume for running tests.
-
-## Productaggregator service configuration
- list env vars
+![Relational model](docs/images/docker-compose.png)
 
 ## Testing
 ```
@@ -120,10 +119,6 @@ specification. However, it is a simple solution for this challenge.
 # Relational model
 ![Relational model](docs/images/rel_model.png)
 
-# Docker-compose visualization
-![Relational model](docs/images/docker-compose.png)
-
- 
 # Chosen packages
 I decided to use this opportunity to learn Flask because of its popularity in microservices. 
 I am accustomed to Django's ORM system and Django Rest Framework. 
