@@ -1,7 +1,4 @@
-# Usage
-The service is available on Heroku: http://applifting-challenge-schonfeld.herokuapp.com/products/
-
-## Endpoints
+# API specification
 ```
 PRODUCT = {"id": <int>, "name": <str>, "description": <str or null>}
 ```
@@ -46,7 +43,9 @@ Retrieve a single product.
 <PRODUCT>
 ```
 **404**
-
+```
+{'message': 'Not found.'}
+```
 ### PATCH /products/{id}/
 Update an existing product's fields.
 #### Request:
@@ -62,6 +61,10 @@ Update an existing product's fields.
 ```
 {'message': 'No input data provided'}
 ```
+**404**
+```
+{'message': 'Not found.'}
+```
 **422**
 ```
 {'message': [<validation error messages>]}
@@ -73,7 +76,9 @@ Delete an existing product.
 **204**
 
 **404**
-
+```
+{'message': 'Not found.'}
+```
 # Deployment on Heroku
 1. Enable "Heroku Postgres" add-on and attach to the app.
 2. Run `cd src/productaggregator && ./deploy.sh` to push and release image using Heroku Container Registry.
@@ -84,6 +89,7 @@ command `python manage.py retrieve_new_offers`.
 `docker-compose.yml` is provided for development and testing purposes. 
 There are 2 Postgres services - a persistent one for development and one without a volume for running tests.
 ![Relational model](docs/images/docker-compose.png)
+Generated using one-liner from https://github.com/pmsipilot/docker-compose-viz
 
 ## Testing
 ```

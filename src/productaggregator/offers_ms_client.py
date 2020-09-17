@@ -29,7 +29,7 @@ class OffersMsClient:
 
     >>> oms = OffersMsClient()
     >>> success = oms.register_product(product)
-    >>> for offer_data_raw in oms.extract_offers(p):
+    >>> for offer_data_raw in oms.extract_offers(product):
     >>>     ...
     """
 
